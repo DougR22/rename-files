@@ -1,0 +1,22 @@
+RENAMED azureopenaiessentials.pdf -> API - Azure OpenAI Essentials.pdf
+RENAMED buildingagenticaisystems.pdf -> Agent - Building Agentic AI Systems.pdf
+RENAMED buildingaiapplicationswithopenaiapis.pdf -> API - Building AI Applications with OpenAI APIs.pdf
+RENAMED buildingdata-drivenapplicationswithllamaindex.pdf -> API - Building Data-Driven Applications with LlamaIndex.pdf
+RENAMED buildingllmpoweredapplications.pdf -> Apps - Building LLM-Powered Applications.pdf
+RENAMED essentialguidetollmops.pdf -> Ops - Essential Guide to LLMOps.pdf
+RENAMED generativeaifoundationsinpython.pdf -> Core - Generative AI Foundations in Python.pdf
+RENAMED generativeaiwithlangchain 2e.pdf -> API - Generative AI with LangChain 2e.pdf
+RENAMED generativeaiwithpythonandpytorch.pdf -> Core - Generative AI with Python and PyTorch.pdf
+RENAMED learnmodelcontextprotocolwithpython.pdf -> MCP - Learn Model Context Protocol with Python.pdf
+RENAMED learnmodelcontextprotocolwithtypescript.pdf -> MCP - Learn Model Context Protocol with TypeScript.pdf
+RENAMED learnpythonprogramming 4e.pdf -> Programming - Learn Python Programming 4e.pdf
+RENAMED llmdesignpatterns.pdf -> Systems - LLM Design Patterns.pdf
+RENAMED llmengineershandbook.pdf -> Systems - LLM Engineers Handbook.pdf
+RENAMED llmsinenterprise.pdf -> Systems - LLMs in Enterprise.pdf
+RENAMED machinelearningwithpytorchandscikit-learn.pdf -> Core - Machine Learning with PyTorch and Scikit-Learn.pdf
+RENAMED masteringnlpfromfoundationstollms.pdf -> Core - Mastering NLP from Foundations to LLMs.pdf
+RENAMED moderncomputervisionwithpytorch 2e.pdf -> Core - Modern Computer Vision with PyTorch 2e.pdf
+RENAMED practicalgenerativeaiwithchatgpt.pdf -> Apps - Practical Generative AI with ChatGPT.pdf
+RENAMED rag-drivengenerativeai.pdf -> RAG - RAG-Driven Generative AI.pdf
+RENAMED transformersfornaturallanguageprocessing 3e.pdf -> Core - Transformers for Natural Language Processing 3e.pdf
+RENAMED unlockingdatawithgenerativeaiandrag.pdf -> RAG - Unlocking Data with Generative AI and RAG.pdf

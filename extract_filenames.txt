@@ -1,0 +1,22 @@
+azureopenaiessentials.pdf
+buildingagenticaisystems.pdf
+buildingaiapplicationswithopenaiapis.pdf
+buildingdata-drivenapplicationswithllamaindex.pdf
+buildingllmpoweredapplications.pdf
+essentialguidetollmops.pdf
+generativeaifoundationsinpython.pdf
+generativeaiwithlangchain 2e.pdf
+generativeaiwithpythonandpytorch.pdf
+learnmodelcontextprotocolwithpython.pdf
+learnmodelcontextprotocolwithtypescript.pdf
+learnpythonprogramming 4e.pdf
+llmdesignpatterns.pdf
+llmengineershandbook.pdf
+llmsinenterprise.pdf
+machinelearningwithpytorchandscikit-learn.pdf
+masteringnlpfromfoundationstollms.pdf
+moderncomputervisionwithpytorch 2e.pdf
+practicalgenerativeaiwithchatgpt.pdf
+rag-drivengenerativeai.pdf
+transformersfornaturallanguageprocessing 3e.pdf
+unlockingdatawithgenerativeaiandrag.pdf

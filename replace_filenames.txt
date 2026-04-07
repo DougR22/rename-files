@@ -1,0 +1,22 @@
+API - Azure OpenAI Essentials.pdf
+Agent - Building Agentic AI Systems.pdf
+API - Building AI Applications with OpenAI APIs.pdf
+API - Building Data-Driven Applications with LlamaIndex.pdf
+Apps - Building LLM-Powered Applications.pdf
+Ops - Essential Guide to LLMOps.pdf
+Core - Generative AI Foundations in Python.pdf
+API - Generative AI with LangChain 2e.pdf
+Core - Generative AI with Python and PyTorch.pdf
+MCP - Learn Model Context Protocol with Python.pdf
+MCP - Learn Model Context Protocol with TypeScript.pdf
+Programming - Learn Python Programming 4e.pdf
+Systems - LLM Design Patterns.pdf
+Systems - LLM Engineers Handbook.pdf
+Systems - LLMs in Enterprise.pdf
+Core - Machine Learning with PyTorch and Scikit-Learn.pdf
+Core - Mastering NLP from Foundations to LLMs.pdf
+Core - Modern Computer Vision with PyTorch 2e.pdf
+Apps - Practical Generative AI with ChatGPT.pdf
+RAG - RAG-Driven Generative AI.pdf
+Core - Transformers for Natural Language Processing 3e.pdf
+RAG - Unlocking Data with Generative AI and RAG.pdf
