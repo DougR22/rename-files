@@ -123,3 +123,11 @@ python replace.py --apply
 - Ensure `replace_filenames.txt` has same number of lines as `extract_filenames.txt`
 - Invalid Windows filename characters will prevent the script from proceeding
 - Check both log files after running to verify results
+
+
+<br>
+
+
+### Credit
+
+This file created by Claude Haiku 4.5 in VSCode and modified by Doug Robinson.

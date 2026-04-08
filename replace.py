@@ -1,6 +1,12 @@
 """
-Script to rename files in the current directory using 1:1 mappings from 2 txt files (extract and rename).
-Validates new filenames against Windows invalid characters and supports dry-run mode.
+Program to rename files in the current directory using 1:1 mappings from 2 txt files:
+    1. extract_filenames.txt from extract.py
+    2. replace_filenames.txt created by user with new names corresponding to the old names in extract_filenames.txt
+
+This program also validates new filenames against Windows 11 invalid characters.
+It also supports dry-run mode.
+
+This program was created by Claude Haiku 4.5 in VSCode.
 """
 
 import os

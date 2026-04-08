@@ -1,7 +1,9 @@
 """
-Part 1 of 2: this program: extract PDF filenames from the current directory to extract_filenames.txt.
+Part 1 of 2 (this program extract.py) -- extract PDF filenames from the current directory to extract_filenames.txt.
 
-Note that part 2 is replace.py which replaces filenames using mappings from the ouptut of this app (extract_filenames.txt) and replace_filenames.txt
+Part 2 is replace.py -- which replaces filenames using mappings from the ouptut of this program (extract_filenames.txt) plus another file replace_filenames.txt
+
+This program was created by Claude Haiku 4.5 in VSCode.
 """
 
 import os
