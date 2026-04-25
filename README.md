@@ -9,7 +9,7 @@ A two-program workflow for batch renaming PDF files using a mapping system.
 **Purpose**: Extract PDF filenames from the current directory and save them to a file.
 
 **Functionality**:
-- Lists all `.pdf` files in the script's directory
+- Lists all `.pdf` files in the script's directory (can be another extension if --ext arg used, see EXT example below)
 - Saves each filename to `extract_filenames.txt` (one per line)
 - Prints extracted filenames to console
 - Displays total count of processed files
@@ -26,6 +26,25 @@ python extract.py
 ```
 Extracted: document1.pdf
 Extracted: document2.pdf
+
+Total files processed: 2
+Results saved to: extract_filenames.txt
+```
+
+**EXT Argument**:
+- `--ext`: Specify the file extension to extract (default is `.pdf`).
+
+**Usage**:
+```bash
+python extract.py --ext .epub
+```
+
+**Example**:
+```bash
+python extract.py --ext .epub
+
+Extracted: document1.epub
+Extracted: document2.epub
 
 Total files processed: 2
 Results saved to: extract_filenames.txt

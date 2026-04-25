@@ -99,7 +99,7 @@ def rename_files(dry_run=True):
         # Find the file that matches this old name
         filename = None
         for f in files:
-            if f == old or f.startswith(old.replace('.pdf', '')):
+            if f == old:
                 filename = f
                 break
 
@@ -116,7 +116,8 @@ def rename_files(dry_run=True):
         src = os.path.join(DIRECTORY, filename)
         dst = os.path.join(DIRECTORY, dst_name)
 
-        if os.path.exists(dst):
+        # Handle case-only renames on Windows (case-insensitive fs)
+        if os.path.exists(dst) and src.lower() != dst.lower():
             log_lines.append(f"CONFLICT {filename} -> {dst_name}")
             continue
 
@@ -145,6 +146,9 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Rename files using 1:1 mappings')
     parser.add_argument('--apply', action='store_true', help='Apply renames (default: dry-run)')
     args = parser.parse_args()
+
+    # We are not passing in an optional --ext arg here
+    # Reason: we only need --ext in extract.py since here we have the names in file extract_filenames.txt)
 
     if not validate_filenames():
         print("Fix validation errors before proceeding.")

@@ -5,17 +5,17 @@ Part 2 is replace.py -- which replaces filenames using mappings from the ouptut 
 
 This program was created by Claude Haiku 4.5 in VSCode.
 """
-
 import os
 import re
+import argparse
 
 # Directory containing files to process
 DIRECTORY = os.path.dirname(os.path.abspath(__file__))
 
-def extract_filenames():
+def extract_filenames(ext='pdf'):
     """
-    Extract all filenames in current directory that end in .pdf and save them to a file named "extract_filenames.txt". 
-    Each line in the output file will contain the filename.
+    Extract all filenames in current directory that end in .pdf (or other given extension, such as "epub") 
+    Save list of filenames to file named "extract_filenames.txt".
     """
     try:
         # List all files in the directory
@@ -24,7 +24,7 @@ def extract_filenames():
         extracted_data = []
 
         for filename in files:
-            if filename.endswith('.pdf'):
+            if filename.endswith(f'.{ext}'):
                 extracted_data.append({
                     'filename': filename,
                     'extracted': filename
@@ -46,4 +46,7 @@ def extract_filenames():
         print(f"Error: {e}")
 
 if __name__ == "__main__":
-    extract_filenames()
+    parser = argparse.ArgumentParser(description='Extract filenames by extension')
+    parser.add_argument('--ext', default='pdf', help='File extension to extract (default: pdf)')
+    args = parser.parse_args()
+    extract_filenames(ext=args.ext)
