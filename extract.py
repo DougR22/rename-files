@@ -4,15 +4,16 @@ Part 1 of 2 (this program extract.py) -- extract PDF filenames from the current 
 Part 2 is replace.py -- which replaces filenames using mappings from the ouptut of this program (extract_filenames.txt) plus another file replace_filenames.txt
 
 This program was created by Claude Haiku 4.5 in VSCode.
+Some Pylance warnings fixed by GPT-6.2 Sol (medium effort mode).
 """
+
 import os
-import re
 import argparse
 
 # Directory containing files to process
 DIRECTORY = os.path.dirname(os.path.abspath(__file__))
 
-def extract_filenames(ext='pdf'):
+def extract_filenames(ext: str = 'pdf'):
     """
     Extract all filenames in current directory that end in .pdf (or other given extension, such as "epub") 
     Save list of filenames to file named "extract_filenames.txt".
@@ -21,7 +22,7 @@ def extract_filenames(ext='pdf'):
         # List all files in the directory
         files = os.listdir(DIRECTORY)
 
-        extracted_data = []
+        extracted_data: list[dict[str, str]] = []
 
         for filename in files:
             if filename.endswith(f'.{ext}'):
