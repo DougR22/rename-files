@@ -1,5 +1,7 @@
 """
-Program to rename files in the current directory using 1:1 mappings from 2 txt files:
+This program is part 2 of 2  (part 1 is extract.py -- which extracts PDF filenames from the current directory to extract_filenames.txt)
+
+This program renames files in the current directory using 1:1 mappings from 2 txt files:
     1. extract_filenames.txt from extract.py
     2. replace_filenames.txt created by user with new names corresponding to the old names in extract_filenames.txt
 
@@ -7,6 +9,7 @@ This program also validates new filenames against Windows 11 invalid characters.
 It also supports dry-run mode.
 
 This program was created by Claude Haiku 4.5 in VSCode.
+Pylance warnings fixed by GPT-6.2 Sol (medium effort mode).
 """
 
 import os
@@ -20,7 +23,7 @@ VALIDATION_LOG_FILE = "validation_log.txt"
 INVALID_CHARS = '<>:"/\\|?*'
 
 
-def read_lines(filepath):
+def read_lines(filepath: str | os.PathLike[str]) -> list[str]:
     if not os.path.isfile(filepath):
         return []
     with open(filepath, 'r', encoding='utf-8') as f:
@@ -35,14 +38,14 @@ def validate_filenames():
     """
     new_names = read_lines(os.path.join(DIRECTORY, REPLACE_FILE))
 
-    validation_lines = []
+    validation_lines: list[str] = []
     has_errors = False
 
     for idx, filename in enumerate(new_names):
         if not filename:
             continue
 
-        bad_chars = []
+        bad_chars: list[tuple[str, int]] = []
         for pos, char in enumerate(filename):
             if char in INVALID_CHARS:
                 bad_chars.append((char, pos))
@@ -72,7 +75,7 @@ def validate_filenames():
     return not has_errors
 
 
-def rename_files(dry_run=True):
+def rename_files(dry_run: bool = True) -> None:
     """Perform 1:1 mapping renames for all files.
 
     Maps old names to new names using extract_filenames.txt and replace_filenames.txt.
@@ -89,7 +92,8 @@ def rename_files(dry_run=True):
         print(f"Directory not found: {DIRECTORY}")
         return
 
-    log_lines = []
+    log_lines: list[str] = []
+    has_issues = False
     renamed_count = 0
 
     for i, old in enumerate(old_names):
@@ -107,6 +111,7 @@ def rename_files(dry_run=True):
             continue
 
         if i >= len(new_names):
+            has_issues = True
             log_lines.append(f"SKIP {filename}: no corresponding new name at index {i}")
             continue
 
@@ -118,6 +123,7 @@ def rename_files(dry_run=True):
 
         # Handle case-only renames on Windows (case-insensitive fs)
         if os.path.exists(dst) and src.lower() != dst.lower():
+            has_issues = True
             log_lines.append(f"CONFLICT {filename} -> {dst_name}")
             continue
 
@@ -130,6 +136,7 @@ def rename_files(dry_run=True):
                 log_lines.append(f"RENAMED {filename} -> {dst_name}")
                 renamed_count += 1
             except Exception as e:
+                has_issues = True
                 error_msg = f"ERROR {filename}: {e}"
                 log_lines.append(error_msg)
                 print(error_msg.upper())
@@ -140,6 +147,8 @@ def rename_files(dry_run=True):
 
     status = "DRY RUN - renames not applied" if dry_run else "Applied"
     print(f"Processed {len(old_names)} entries. {renamed_count} files. {status}. Log: {LOG_FILE}")
+    if has_issues:
+        print("ISSUE(S) - SEE LOG")
 
 
 if __name__ == '__main__':

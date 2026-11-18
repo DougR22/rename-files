@@ -1,10 +1,12 @@
 """
-Part 1 of 2 (this program extract.py) -- extract PDF filenames from the current directory to extract_filenames.txt.
+This program is part 1 of 2
 
-Part 2 is replace.py -- which replaces filenames using mappings from the ouptut of this program (extract_filenames.txt) plus another file replace_filenames.txt
+This program extracts PDF filenames from the current directory into extract_filenames.txt, feed this into ChatGPT to get better filenames.
+
+Part 2 is replace.py -- which replaces filenames using mappings from the output of this program (extract_filenames.txt) plus another file replace_filenames.txt
 
 This program was created by Claude Haiku 4.5 in VSCode.
-Some Pylance warnings fixed by GPT-6.2 Sol (medium effort mode).
+Pylance warnings fixed by GPT-6.2 Sol (medium effort mode).
 """
 
 import os
@@ -12,6 +14,7 @@ import argparse
 
 # Directory containing files to process
 DIRECTORY = os.path.dirname(os.path.abspath(__file__))
+EXTRACT_FILE = "extract_filenames.txt"
 
 def extract_filenames(ext: str = 'pdf'):
     """
@@ -33,7 +36,7 @@ def extract_filenames(ext: str = 'pdf'):
                 print(f"Extracted: {filename}\n")
         
         # Save results to a file
-        output_file = os.path.join(DIRECTORY, "extract_filenames.txt")
+        output_file = os.path.join(DIRECTORY, EXTRACT_FILE)
         with open(output_file, 'w') as f:
             for item in extracted_data:
                 f.write(f"{item['extracted']}\n")
